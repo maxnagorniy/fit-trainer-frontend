@@ -14,7 +14,7 @@ import customInputStyle from "assets/jss/material-dashboard-react/components/cus
 import MenuItem from "@material-ui/core/MenuItem/MenuItem";
 import Select from "@material-ui/core/Select/Select";
 
-function CustomInput({ ...props }) {
+function CustomSelect({ ...props }) {
   const {
     classes,
     formControlProps,
@@ -52,24 +52,7 @@ function CustomInput({ ...props }) {
           {labelText}
         </InputLabel>
       ) : null}
-      <Input
-        classes={{
-          root: marginTop,
-          disabled: classes.disabled,
-          underline: underlineClasses
-        }}
-        id={id}
-        {...inputProps}
-      />
-      {labelText !== undefined ? (
-        <InputLabel
-          className={classes.labelRoot + labelClasses}
-          htmlFor={id}
-          {...labelProps}
-        >
-          {labelText}
-        </InputLabel>
-      ) : null}
+
       <Select
         value=""
         displayEmpty
@@ -83,6 +66,15 @@ function CustomInput({ ...props }) {
         <MenuItem value={20}>meters</MenuItem>
         <MenuItem value={30}>minutes</MenuItem>
       </Select>
+      <Input
+        classes={{
+          root: marginTop,
+          disabled: classes.disabled,
+          underline: underlineClasses
+        }}
+        id={id}
+        {...inputProps}
+      />
       {error ? (
         <Clear className={classes.feedback + " " + classes.labelRootError} />
       ) : success ? (
@@ -92,7 +84,7 @@ function CustomInput({ ...props }) {
   );
 }
 
-CustomInput.propTypes = {
+CustomSelect.propTypes = {
   classes: PropTypes.object.isRequired,
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
@@ -103,4 +95,4 @@ CustomInput.propTypes = {
   success: PropTypes.bool
 };
 
-export default withStyles(customInputStyle)(CustomInput);
+export default withStyles(customInputStyle)(CustomSelect);

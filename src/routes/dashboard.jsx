@@ -4,10 +4,11 @@ import Receipt from "@material-ui/icons/Receipt";
 
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
-import TableList from "views/TableList/TableList.jsx";
-import Icons from "views/Icons/Icons.jsx";
-import NotificationsPage from "views/Notifications/Notifications.jsx";
+
+import NewExercise from "views/NewExercise/NewExercise.jsx";
+import EditExercise from "views/EditExercise/EditExercise.jsx";
+import NewWorkout from "views/NewWorkout/NewWorkout.jsx";
+import EditWorkout from "views/EditWorkout/EditWorkout.jsx";
 
 const dashboardRoutes = [
   {
@@ -22,28 +23,28 @@ const dashboardRoutes = [
     sidebarName: "New Exercise",
     navbarName: "New Exercise",
     icon: Receipt,
-    component: UserProfile
+    component: NewExercise
   },
   {
     path: "/editexercise",
     sidebarName: "Edit Exercise",
     navbarName: "Edit Exercise",
     icon: Receipt,
-    component: TableList
+    component: EditExercise
   },
   {
     path: "/workout",
     sidebarName: "New Workout",
     navbarName: "New Workout",
     icon: Receipt,
-    component: Icons
+    component: NewWorkout
   },
   {
     path: "/editworkout",
     sidebarName: "Edit Workout",
     navbarName: "Edit Workout",
     icon: Receipt,
-    component: NotificationsPage
+    component: EditWorkout
   },
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
