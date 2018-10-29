@@ -15,23 +15,28 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="#home" className={classes.block}>
-                Home
+              <a href="/dashboard" className={classes.block}>
+                Dashboard
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={classes.block}>
-                Company
+              <a href="/exercise" className={classes.block}>
+                New Exercise
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={classes.block}>
-                Portfolio
+              <a href="/editexercise" className={classes.block}>
+                Edit Exercise
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
+              <a href="/workout" className={classes.block}>
+                New Workout
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a href="/editworkout" className={classes.block}>
+                Edit Workout
               </a>
             </ListItem>
           </List>
@@ -39,8 +44,8 @@ function Footer({ ...props }) {
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a href="https://www.creative-tim.com" className={classes.a}>
-              Creative Tim
+            <a href="https://github.com/maxnagorniy/fit-trainer-frontend" className={classes.a}>
+              Max
             </a>, made with love for a better web
           </span>
         </p>
