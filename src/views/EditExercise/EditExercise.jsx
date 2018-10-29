@@ -12,6 +12,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
 
+
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
@@ -43,6 +44,15 @@ function EditExercise(props) {
             </CardHeader>
             <CardBody>
               <GridContainer>
+                <GridItem xs={12} sm={12} md={12}>
+                  <CustomInput
+                    labelText="Exercise Name"
+                    id="exercise-name"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     labelText="Exercise Name"
