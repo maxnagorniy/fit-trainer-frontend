@@ -13,6 +13,8 @@ import EditWorkout from "views/EditWorkout/EditWorkout.jsx";
 import SignUp from "../views/SignUp/SignUp";
 import SignIn from "../views/SignIn/SignIn";
 
+import Verification from "../views/Verification/Verification";
+
 
 const dashboardRoutes = [
   {
@@ -63,6 +65,13 @@ const dashboardRoutes = [
     navbarName: "Sign In",
     icon: Person,
     component: SignIn
+  },
+  {
+    path: "/verification",
+    sidebarName: "Email verification",
+    navbarName: "Email verification",
+    icon: Person,
+    component: Verification
   },
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];

@@ -67,7 +67,7 @@ const styles = {
   measurementText: {
     margin: "0 10px",
     color: "#AAAAAA",
-    fontWeight: "500"
+    fontWeight: "400"
   }
 };
 

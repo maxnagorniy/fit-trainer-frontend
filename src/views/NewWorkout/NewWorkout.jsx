@@ -66,7 +66,7 @@ const styles = {
   measurementText: {
     margin: "0 10px",
     color: "#AAAAAA",
-    fontWeight: "500"
+    fontWeight: "400"
   }
 };
 
@@ -101,7 +101,6 @@ class NewWorkout extends React.Component {
         }
       ]
     };
-
     render() {
       const { classes } = this.props;
       const ListExerciseItems = this.state.exerciseItems.map((exerciseItem, index) =>

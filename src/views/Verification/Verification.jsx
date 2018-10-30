@@ -35,7 +35,7 @@ const styles = {
   }
 };
 
-class SignIn extends React.Component {
+class Verification extends React.Component {
   render() {
     const { classes } = this.props;
     return (
@@ -45,17 +45,22 @@ class SignIn extends React.Component {
             <Card>
               <form>
                 <CardHeader color="primary">
-                  <h4 className={classes.cardTitleWhite}>Sign into Fit Trainer App</h4>
-                  <p className={classes.cardCategoryWhite}>Please, enter your email and password</p>
+                  <h4 className={classes.cardTitleWhite}>Email verification to finish registration with Fit Trainer App</h4>
+                  <p className={classes.cardCategoryWhite}>Please, confirm email address</p>
                 </CardHeader>
                 <CardBody>
                   <GridContainer direction="column">
                     <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
-                        labelText="Email address"
+                        label="Disabled"
+                        disabled
+                        labelText="randommail@gmail.com"
                         id="email-address"
                         formControlProps={{
                           fullWidth: true
+                        }}
+                        inputProps={{
+                          disabled: true
                         }}
                       />
                     </GridItem>
@@ -71,10 +76,10 @@ class SignIn extends React.Component {
                   </GridContainer>
                 </CardBody>
                 <CardFooter>
-                  <Button color="primary"> Sign In</Button>
+                  <Button color="primary"> Verify Email</Button>
                 </CardFooter>
                 <CardBody>
-                  <span className={classes.formFooterInfo}>first time user? sign-up</span>
+                  <span className={classes.formFooterInfo}>already have an account? sign-in</span>
                 </CardBody>
               </form>
             </Card>
@@ -85,4 +90,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default withStyles(styles)(SignIn);
+export default withStyles(styles)(Verification);

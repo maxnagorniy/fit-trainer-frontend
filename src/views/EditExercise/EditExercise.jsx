@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -67,6 +68,11 @@ const styles = {
 };
 
 
+const gridContainerList = {
+  paddingBottom: "10px",
+  borderBottom: "1px solid #D2D2D2"
+};
+
 
 
 
@@ -91,7 +97,7 @@ class EditExercise extends React.Component {
   render() {
     const { classes } = this.props;
     const ListExerciseItems = this.state.exerciseItems.map((exerciseItem, index) =>
-      <GridContainer key={index} style={{borderBottom: "1px solid #dddddd", paddingBottom: "10px"}}>
+      <GridContainer key={index} style={gridContainerList} >
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
             labelText={exerciseItem.name}

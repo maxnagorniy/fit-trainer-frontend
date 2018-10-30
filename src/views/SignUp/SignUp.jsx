@@ -28,7 +28,7 @@ const styles = {
     marginBottom: "3px",
     textDecoration: "none"
   },
-  footerInfo: {
+  formFooterInfo: {
     color: "#9c27b0",
     fontSize: "1rem",
     fontWeight: "400"
@@ -49,8 +49,8 @@ class SignUp extends React.Component {
                   <p className={classes.cardCategoryWhite}>Please, enter your email and password</p>
                 </CardHeader>
                 <CardBody>
-                  <GridContainer>
-                    <GridItem xs={12} sm={12} md={6} direction="column">
+                  <GridContainer direction="column">
+                    <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
                         labelText="Email address"
                         id="email-address"
@@ -83,7 +83,7 @@ class SignUp extends React.Component {
                   <Button color="primary"> Sign Up</Button>
                 </CardFooter>
                 <CardBody>
-                  <span className={classes.footerInfo}>already have an account? sign-in</span>
+                  <span className={classes.formFooterInfo}>already have an account? sign-in</span>
                 </CardBody>
               </form>
             </Card>

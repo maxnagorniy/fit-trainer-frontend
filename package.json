@@ -20,9 +20,11 @@
     "react-dom": "^16.5.2",
     "react-google-maps": "9.4.5",
     "react-infinite-calendar": "^2.3.1",
+    "react-jss": "^8.6.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.5",
     "react-select": "^2.1.1",
+    "react-style": "^0.5.5",
     "react-swipeable-views": "0.12.17"
   },
   "scripts": {
