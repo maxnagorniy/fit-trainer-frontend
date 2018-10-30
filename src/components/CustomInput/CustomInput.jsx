@@ -11,8 +11,6 @@ import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 // core components
 import customInputStyle from "assets/jss/material-dashboard-react/components/customInputStyle.jsx";
-import MenuItem from "@material-ui/core/MenuItem/MenuItem";
-import Select from "@material-ui/core/Select/Select";
 
 function CustomInput({ ...props }) {
   const {
@@ -61,28 +59,6 @@ function CustomInput({ ...props }) {
         id={id}
         {...inputProps}
       />
-      {labelText !== undefined ? (
-        <InputLabel
-          className={classes.labelRoot + labelClasses}
-          htmlFor={id}
-          {...labelProps}
-        >
-          {labelText}
-        </InputLabel>
-      ) : null}
-      <Select
-        value=""
-        displayEmpty
-        name="age"
-        className={classes.selectEmpty}
-      >
-        <MenuItem value="" disabled>
-          Measurement type
-        </MenuItem>
-        <MenuItem value={10}>kilograms</MenuItem>
-        <MenuItem value={20}>meters</MenuItem>
-        <MenuItem value={30}>minutes</MenuItem>
-      </Select>
       {error ? (
         <Clear className={classes.feedback + " " + classes.labelRootError} />
       ) : success ? (

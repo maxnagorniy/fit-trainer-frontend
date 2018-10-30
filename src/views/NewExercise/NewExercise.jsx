@@ -10,6 +10,10 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import FormControl from "@material-ui/core/FormControl/FormControl";
+import InputLabel from "@material-ui/core/InputLabel/InputLabel";
+import Select from "@material-ui/core/Select/Select";
+import MenuItem from "@material-ui/core/MenuItem/MenuItem";
 
 const styles = {
   cardCategoryWhite: {
@@ -27,42 +31,82 @@ const styles = {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
     textDecoration: "none"
+  },
+  colorDefault: {
+    color: "#AAAAAA !important",
+    fontSize: "14px"
+  },
+  selectEmpty: {
+    '&:before': {
+      borderBottom: "1px solid #D2D2D2 !important;"
+    },
+    '&:after': {
+      borderColor: "#9c27b0!important;"
+    },
+    '&:hover': {
+      '&:before': {
+        borderBottom: "1px solid #D2D2D2!important;"
+      },
+      '&:after': {
+        borderColor: "#9c27b0!important;"
+      }
+    }
   }
 };
 
-function NewExercise(props) {
-  const { classes } = props;
-  return (
-
-    <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
-              <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
-            </CardHeader>
-            <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <CustomInput
-                    labelText="Exercise Name"
-                    id="exercise-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-            </CardBody>
-            <CardFooter>
-              <Button color="primary"> Create Exercise</Button>
-            </CardFooter>
-          </Card>
-        </GridItem>
-      </GridContainer>
-    </div>
-  );
+class NewExercise extends React.Component {
+  state = {
+    value: '',
+  };
+  render() {
+    const { classes } = this.props;
+    return (
+      <div>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={12} lg={10}>
+            <Card>
+              <CardHeader color="primary">
+                <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
+                <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
+              </CardHeader>
+              <CardBody>
+                <GridContainer>
+                  <GridItem xs={12} sm={12} md={12}>
+                    <CustomInput
+                      labelText="Exercise Name"
+                      id="exercise-name"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                    />
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={12}>
+                    <FormControl style={{width: "100%", marginTop: "25px"}} className={classes.formControl}>
+                      <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">Measurement type</InputLabel>
+                      <Select
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        name="value"
+                        displayEmpty
+                        className={classes.selectEmpty}
+                      >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+              <CardFooter>
+                <Button color="primary"> Create Exercise</Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+        </GridContainer>
+      </div>
+    );
+  }
 }
 
 export default withStyles(styles)(NewExercise);

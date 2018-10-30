@@ -1,98 +1,75 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
-// @material-ui/icons
-import Clear from "@material-ui/icons/Clear";
-import Check from "@material-ui/icons/Check";
-// core components
-import customInputStyle from "assets/jss/material-dashboard-react/components/customInputStyle.jsx";
-import MenuItem from "@material-ui/core/MenuItem/MenuItem";
-import Select from "@material-ui/core/Select/Select";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+// import Input from '@material-ui/core/Input';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
+// import FilledInput from '@material-ui/core/FilledInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-function CustomSelect({ ...props }) {
-  const {
-    classes,
-    formControlProps,
-    labelText,
-    id,
-    labelProps,
-    inputProps,
-    error,
-    success
-  } = props;
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing.unit * 2,
+  },
+});
 
-  const labelClasses = classNames({
-    [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
-  });
-  const underlineClasses = classNames({
-    [classes.underlineError]: error,
-    [classes.underlineSuccess]: success && !error,
-    [classes.underline]: true
-  });
-  const marginTop = classNames({
-    [classes.marginTop]: labelText === undefined
-  });
-  return (
-    <FormControl
-      {...formControlProps}
-      className={formControlProps.className + " " + classes.formControl}
-    >
-      {labelText !== undefined ? (
-        <InputLabel
-          className={classes.labelRoot + labelClasses}
-          htmlFor={id}
-          {...labelProps}
-        >
-          {labelText}
-        </InputLabel>
-      ) : null}
+class NativeSelects extends React.Component {
+  state = {
+    age: '',
+    name: 'hai',
+    labelWidth: 0,
+  };
 
-      <Select
-        value=""
-        displayEmpty
-        name="age"
-        className={classes.selectEmpty}
-      >
-        <MenuItem value="" disabled>
-          Measurement type
-        </MenuItem>
-        <MenuItem value={10}>kilograms</MenuItem>
-        <MenuItem value={20}>meters</MenuItem>
-        <MenuItem value={30}>minutes</MenuItem>
-      </Select>
-      <Input
-        classes={{
-          root: marginTop,
-          disabled: classes.disabled,
-          underline: underlineClasses
-        }}
-        id={id}
-        {...inputProps}
-      />
-      {error ? (
-        <Clear className={classes.feedback + " " + classes.labelRootError} />
-      ) : success ? (
-        <Check className={classes.feedback + " " + classes.labelRootSuccess} />
-      ) : null}
-    </FormControl>
-  );
+  componentDidMount() {
+    this.setState({
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
+    });
+  }
+
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.value });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="age-native-simple">Age</InputLabel>
+          <Select
+            value={this.state.age}
+            onChange={this.handleChange}
+            name="age"
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem value="" >
+              Ten
+            </MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
+    );
+  }
 }
 
-CustomSelect.propTypes = {
+NativeSelects.propTypes = {
   classes: PropTypes.object.isRequired,
-  labelText: PropTypes.node,
-  labelProps: PropTypes.object,
-  id: PropTypes.string,
-  inputProps: PropTypes.object,
-  formControlProps: PropTypes.object,
-  error: PropTypes.bool,
-  success: PropTypes.bool
 };
 
-export default withStyles(customInputStyle)(CustomSelect);
+export default withStyles(styles)(NativeSelects);
