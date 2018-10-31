@@ -10,6 +10,7 @@ import NewExercise from "views/NewExercise/NewExercise.jsx";
 import EditExercise from "views/EditExercise/EditExercise.jsx";
 import NewWorkout from "views/NewWorkout/NewWorkout.jsx";
 import EditWorkout from "views/EditWorkout/EditWorkout.jsx";
+
 import SignUp from "../views/SignUp/SignUp";
 import SignIn from "../views/SignIn/SignIn";
 

@@ -68,7 +68,15 @@ const styles = {
     margin: "0 10px",
     color: "#AAAAAA",
     fontWeight: "400"
-  }
+  },
+
+};
+
+const borderItem = {
+  width: "100%",
+  margin: "0 15px",
+  borderBottom: "1px solid #dddddd",
+  paddingBottom: "10px"
 };
 
 
@@ -107,9 +115,9 @@ class EditWorkout extends React.Component {
   render() {
     const { classes } = this.props;
     const ListExerciseItems = this.state.exerciseItems.map((exerciseItem, index) =>
-      <GridContainer key={index} style={{borderBottom: "1px solid #dddddd", paddingBottom: "10px"}}>
+      <GridContainer key={index}>
 
-        <GridItem xs={12} sm={12} md={2}>
+        <GridItem xs={12} sm={12} md={12} lg={2}>
           <FormControl style={{width: "100%", marginTop: "27px"}} className={classes.formControl}>
             <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">{exerciseItem.name}</InputLabel>
             <Select
@@ -126,7 +134,7 @@ class EditWorkout extends React.Component {
         </GridItem>
 
 
-        <GridItem xs={12} sm={12} md={3}>
+        <GridItem xs={12} sm={12} md={12} lg={3}>
           <CustomInput
             labelText={exerciseItem.repeat}
             id="exercise-repeat"
@@ -136,7 +144,7 @@ class EditWorkout extends React.Component {
           />
         </GridItem>
 
-        <GridItem xs={12} sm={12} md={3}>
+        <GridItem xs={12} sm={12} md={12} lg={3}>
           <CustomInput
             labelText={exerciseItem.measurement}
             id="exercise-measurement"
@@ -146,7 +154,7 @@ class EditWorkout extends React.Component {
           />
         </GridItem>
 
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={12} lg={4}>
           <div className={classes.buttonWrapper}>
 
             <h4 className={classes.measurementText}>kg</h4>
@@ -162,12 +170,13 @@ class EditWorkout extends React.Component {
             </Button>
           </div>
         </GridItem>
+        <span style={borderItem}></span>
       </GridContainer>
     );
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={12} lg={10}>
+          <GridItem xs={12} sm={12} md={12} lg={12}>
             <Card>
               <CardHeader color="primary">
                 <h4 className={classes.cardTitleWhite}>Edit workout</h4>

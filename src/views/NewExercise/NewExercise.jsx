@@ -63,7 +63,7 @@ class NewExercise extends React.Component {
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={12} lg={10}>
+          <GridItem xs={12} sm={12} md={12} lg={12}>
             <Card>
               <CardHeader color="primary">
                 <h4 className={classes.cardTitleWhite}>Create new exercise</h4>

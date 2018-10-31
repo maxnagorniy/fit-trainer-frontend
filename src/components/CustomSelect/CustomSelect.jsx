@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 // import Input from '@material-ui/core/Input';
@@ -27,19 +27,14 @@ const styles = theme => ({
 
 class NativeSelects extends React.Component {
   state = {
-    age: '',
-    name: 'hai',
-    labelWidth: 0,
+    age: ''
   };
-
-  componentDidMount() {
-    this.setState({
-      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-    });
-  }
-
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
+  handleChange = event => {
+    console.log(event.target);
+    console.log(event.target.name);
+    console.log(event.target.value);
+    console.log(this.state);
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
@@ -52,13 +47,9 @@ class NativeSelects extends React.Component {
           <Select
             value={this.state.age}
             onChange={this.handleChange}
-            name="age"
-            displayEmpty
             className={classes.selectEmpty}
           >
-            <MenuItem value="" >
-              Ten
-            </MenuItem>
+            <MenuItem value="Ten">Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>

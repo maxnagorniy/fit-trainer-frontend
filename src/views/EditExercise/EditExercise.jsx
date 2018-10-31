@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -18,6 +19,9 @@ import FormControl from "@material-ui/core/FormControl/FormControl";
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Cancel from '@material-ui/icons/Cancel';
+
+
+// import CustomSelect from '../../components/CustomSelect/CustomSelect';
 
 
 const styles = {
@@ -58,7 +62,7 @@ const styles = {
     }
   },
   button: {
-    padding: "12px 40px;"
+    padding: "12px 37px;"
   },
   buttonWrapper: {
     display: "flex",
@@ -68,9 +72,11 @@ const styles = {
 };
 
 
-const gridContainerList = {
-  paddingBottom: "10px",
-  borderBottom: "1px solid #D2D2D2"
+const borderItem = {
+  width: "100%",
+  margin: "0 15px",
+  borderBottom: "1px solid #dddddd",
+  paddingBottom: "10px"
 };
 
 
@@ -78,26 +84,24 @@ const gridContainerList = {
 
 class EditExercise extends React.Component {
   state = {
-    valueSelect: '',
-    exerciseItems: [
-      {
-        title: "Measurement type1",
-        name: "Exercise Name"
-      },
-      {
-        title: "Measurement type2",
-        name: "Exercise Name2"
-      },
-      {
-        title: "Measurement type3",
-        name: "Exercise Name3"
-      }
-    ]
+    selectValue: ''
   };
+
+
+
+  handleChange = event => {
+    console.log(event.target);
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+
+
+
   render() {
     const { classes } = this.props;
-    const ListExerciseItems = this.state.exerciseItems.map((exerciseItem, index) =>
-      <GridContainer key={index} style={gridContainerList} >
+    const ListExerciseItems = this.props.editExerciseItems.test[0].exerciseItems.map((exerciseItem, index) =>
+
+      <GridContainer key={index}>
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
             labelText={exerciseItem.name}
@@ -111,14 +115,16 @@ class EditExercise extends React.Component {
           <FormControl style={{width: "100%", marginTop: "27px"}} className={classes.formControl}>
             <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">{exerciseItem.title}</InputLabel>
             <Select
-              value={this.state.valueSelect}
               onChange={this.handleChange}
-              name="valueSelect"
               className={classes.selectEmpty}
+              value={this.state.selectValue}
+              inputProps={{
+                name: "selectValue"
+              }}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value='kilograms'>Kilograms</MenuItem>
+              <MenuItem value='meters'>Meters</MenuItem>
+              <MenuItem value='minutes'>Minutes</MenuItem>
             </Select>
           </FormControl>
         </GridItem>
@@ -135,12 +141,13 @@ class EditExercise extends React.Component {
             </Button>
           </div>
         </GridItem>
+        <span style={borderItem}></span>
       </GridContainer>
     );
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={12} lg={10}>
+          <GridItem xs={12} sm={12} md={12}  >
             <Card>
               <CardHeader color="primary">
                 <h4 className={classes.cardTitleWhite}>Edit exercise</h4>
@@ -159,4 +166,9 @@ class EditExercise extends React.Component {
   }
 }
 
-export default withStyles(styles)(EditExercise);
+export default connect (
+  state => ({
+    editExerciseItems: state
+  }),
+  dispatch => ({})
+) (withStyles(styles)(EditExercise));
