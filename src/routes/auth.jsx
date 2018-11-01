@@ -7,17 +7,8 @@ import Person from "@material-ui/icons/Person";
 import SignUp from "../views/SignUp/SignUp";
 import SignIn from "../views/SignIn/SignIn";
 
-import Verification from "../views/Verification/Verification";
-
 
 const authRoutes = [
-  {
-    path: "/signup",
-    sidebarName: "Sign Up",
-    navbarName: "Sign Up",
-    icon: Person,
-    component: SignUp
-  },
   {
     path: "/signin",
     sidebarName: "Sign In",
@@ -26,13 +17,13 @@ const authRoutes = [
     component: SignIn
   },
   {
-    path: "/verification",
-    sidebarName: "Email verification",
-    navbarName: "Email verification",
+    path: "/signup",
+    sidebarName: "Sign Up",
+    navbarName: "Sign Up",
     icon: Person,
-    component: Verification
+    component: SignUp
   },
-  { redirect: true, path: "/", to: "/signup", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/signin", navbarName: "Redirect" }
 ];
 
 export default authRoutes;

@@ -8,8 +8,8 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
+import HeaderAuth from "../../components/HeaderAuth/HeaderAuth";
+import FooterAuth from "components/FooterAuth/FooterAuth.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 
 import authRoutes from "../../routes/auth";
@@ -80,7 +80,7 @@ class Auth extends React.Component {
           {...rest}
         />
         <div className={classes.mainPanel} ref="mainPanel">
-          <Header
+          <HeaderAuth
             routes={authRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
@@ -93,7 +93,7 @@ class Auth extends React.Component {
           ) : (
             <div className={classes.map}>{switchRoutes}</div>
           )}
-          {this.getRoute() ? <Footer /> : null}
+          {this.getRoute() ? <FooterAuth /> : null}
         </div>
       </div>
     );

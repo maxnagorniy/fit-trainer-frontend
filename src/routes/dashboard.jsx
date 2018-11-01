@@ -1,7 +1,7 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Receipt from "@material-ui/icons/Receipt";
-import Person from "@material-ui/icons/Person";
+// import Person from "@material-ui/icons/Person";
 
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
@@ -11,10 +11,10 @@ import EditExercise from "views/EditExercise/EditExercise.jsx";
 import NewWorkout from "views/NewWorkout/NewWorkout.jsx";
 import EditWorkout from "views/EditWorkout/EditWorkout.jsx";
 
-import SignUp from "../views/SignUp/SignUp";
-import SignIn from "../views/SignIn/SignIn";
-
-import Verification from "../views/Verification/Verification";
+// import SignUp from "../views/SignUp/SignUp";
+// import SignIn from "../views/SignIn/SignIn";
+//
+// import Verification from "../views/Verification/Verification";
 
 
 const dashboardRoutes = [
@@ -53,28 +53,7 @@ const dashboardRoutes = [
     icon: Receipt,
     component: EditWorkout
   },
-  {
-    path: "/signup",
-    sidebarName: "Sign Up",
-    navbarName: "Sign Up",
-    icon: Person,
-    component: SignUp
-  },
-  {
-    path: "/signin",
-    sidebarName: "Sign In",
-    navbarName: "Sign In",
-    icon: Person,
-    component: SignIn
-  },
-  {
-    path: "/verification",
-    sidebarName: "Email verification",
-    navbarName: "Email verification",
-    icon: Person,
-    component: Verification
-  },
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/signin", navbarName: "Redirect" }
 ];
 
 export default dashboardRoutes;
