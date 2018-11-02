@@ -91,6 +91,7 @@ class EditExercise extends React.Component {
                 inputProps={{
                   value: exerciseItem.exerciseMeasurement
                 }}
+                onChange={this.handleChangeSelect}
               >
                 <option value="kg">kilograms</option>
                 <option value="min">minutes</option>

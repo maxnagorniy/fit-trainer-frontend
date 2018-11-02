@@ -86,11 +86,13 @@ class NewExercise extends React.Component {
                   <GridContainer>
                     <GridItem xs={12} sm={12} md={12}>
                       <CustomInput
-                        value={this.state.exerciseName}
                         onChange={this.handleChangeInput}
                         labelText="Exercise Name"
                         formControlProps={{
                           fullWidth: true
+                        }}
+                        inputProps={{
+                          value: this.state.exerciseName
                         }}
                       />
                     </GridItem>
@@ -98,14 +100,16 @@ class NewExercise extends React.Component {
                       <FormControl style={{width: "100%"}} className={classes.formControl}>
                         <div className="materialSelect">
                           <CustomSelect
-                            value={this.state.exerciseMeasurement}
                             onChange={this.handleChangeSelect}
                             labelText="Measurement"
                             formControlProps={{
                               fullWidth: true
                             }}
+                            inputProps={{
+                              value: this.state.exerciseMeasurement
+                            }}
                           >
-                            <option value=""></option>
+                            <option value="" disabled></option>
                             <option value="kg">kilograms</option>
                             <option value="min">minutes</option>
                             <option value="m">meters</option>
@@ -133,7 +137,10 @@ export default connect(
   }),
   dispatch => ({
     onAddExercise: (exerciseName, exerciseMeasurement) => {
-      dispatch({ type: 'ADD_EXERCISE', payload: { exerciseName: exerciseName, exerciseMeasurement: exerciseMeasurement } })
+      dispatch({ type: 'ADD_EXERCISE', payload: { id: Math.random()*10000000000000000, exerciseName: exerciseName, exerciseMeasurement: exerciseMeasurement } })
     }
+    // deleteExercise: () => {
+    //   dispatch({ type: 'DELETE_EXERCISE',  })
+    // }
   })
 )(withStyles(styles)(NewExercise));
