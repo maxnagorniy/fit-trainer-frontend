@@ -1,66 +1,83 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-// import Input from '@material-ui/core/Input';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
-// import FilledInput from '@material-ui/core/FilledInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import React from "react";
+import classNames from "classnames";
+import PropTypes from "prop-types";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Select from "@material-ui/core/Select";
+// @material-ui/icons
+import Clear from "@material-ui/icons/Clear";
+import Check from "@material-ui/icons/Check";
+// core components
+import customInputStyle from "assets/jss/material-dashboard-react/components/customInputStyle";
 
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
-  },
-});
+function CustomSelect({ ...props }) {
+  const {
+    classes,
+    formControlProps = {},
+    labelText,
+    id,
+    labelProps,
+    inputProps,
+    error,
+    success,
+    children,
+    onChange
+  } = props;
 
-class NativeSelects extends React.Component {
-  state = {
-    age: ''
-  };
-  handleChange = event => {
-    console.log(event.target);
-    console.log(event.target.name);
-    console.log(event.target.value);
-    console.log(this.state);
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="age-native-simple">Age</InputLabel>
-          <Select
-            value={this.state.age}
-            onChange={this.handleChange}
-            className={classes.selectEmpty}
-          >
-            <MenuItem value="Ten">Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
-    );
-  }
+  const labelClasses = classNames({
+    [" " + classes.labelRootError]: error,
+    [" " + classes.labelRootSuccess]: success && !error
+  });
+  const marginTop = classNames({
+    [classes.marginTop]: labelText === undefined
+  });
+  return (
+    <FormControl
+      {...formControlProps}
+      className={formControlProps.className + " " + classes.formControl}
+    >
+      {labelText !== undefined ? (
+        <InputLabel
+          className={classes.labelRoot + labelClasses}
+          htmlFor={id}
+          {...labelProps}
+        >
+          {labelText}
+        </InputLabel>
+      ) : null}
+      <Select
+        native
+        classes={{
+          root: marginTop,
+          disabled: classes.disabled
+        }}
+        id={id}
+        onChange= {onChange}
+        {...inputProps}
+      >
+        {children}
+      </Select>
+      {error ? (
+        <Clear className={classes.feedback + " " + classes.labelRootError} />
+      ) : success ? (
+        <Check className={classes.feedback + " " + classes.labelRootSuccess} />
+      ) : null}
+    </FormControl>
+  );
 }
 
-NativeSelects.propTypes = {
+CustomSelect.propTypes = {
   classes: PropTypes.object.isRequired,
+  labelText: PropTypes.node,
+  labelProps: PropTypes.object,
+  id: PropTypes.string,
+  onChange: PropTypes.func,
+  inputProps: PropTypes.object,
+  formControlProps: PropTypes.object,
+  error: PropTypes.bool,
+  success: PropTypes.bool
 };
 
-export default withStyles(styles)(NativeSelects);
+export default withStyles(customInputStyle)(CustomSelect);

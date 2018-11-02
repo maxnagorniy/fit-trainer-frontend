@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -11,9 +12,9 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import FormControl from "@material-ui/core/FormControl/FormControl";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
-import Select from "@material-ui/core/Select/Select";
-import MenuItem from "@material-ui/core/MenuItem/MenuItem";
+
+import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import "../../components/CustomSelect/Select.css";
 
 const styles = {
   cardCategoryWhite: {
@@ -35,73 +36,90 @@ const styles = {
   colorDefault: {
     color: "#AAAAAA !important",
     fontSize: "14px"
-  },
-  selectEmpty: {
-    '&:before': {
-      borderBottom: "1px solid #D2D2D2 !important;"
-    },
-    '&:after': {
-      borderColor: "#9c27b0!important;"
-    },
-    '&:hover': {
-      '&:before': {
-        borderBottom: "1px solid #D2D2D2!important;"
-      },
-      '&:after': {
-        borderColor: "#9c27b0!important;"
-      }
-    }
   }
 };
 
 class NewExercise extends React.Component {
-  state = {
-    value: '',
+  constructor(props) {
+    super(props);
+    this.state = {
+      exerciseName: '',
+      exerciseMeasurement: ''
+    }
+  }
+  handleChangeInput = (event) => {
+    this.setState({
+      exerciseName: event.target.value,
+    });
   };
+
+  handleChangeSelect = (event) => {
+    this.setState({
+      exerciseMeasurement: event.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onAddExercise(this.state.exerciseName, this.state.exerciseMeasurement);
+    this.setState({
+      exerciseName: '',
+      exerciseMeasurement: ''
+    });
+    e.target.reset();
+  };
+
   render() {
     const { classes } = this.props;
+    console.log('store', this.props.newExercise);
     return (
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={12} lg={12}>
-            <Card>
-              <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
-                <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
-              </CardHeader>
-              <CardBody>
-                <GridContainer>
-                  <GridItem xs={12} sm={12} md={12}>
-                    <CustomInput
-                      labelText="Exercise Name"
-                      id="exercise-name"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={12}>
-                    <FormControl style={{width: "100%", marginTop: "25px"}} className={classes.formControl}>
-                      <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">Measurement type</InputLabel>
-                      <Select
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                        name="value"
-                        displayEmpty
-                        className={classes.selectEmpty}
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </GridItem>
-                </GridContainer>
-              </CardBody>
-              <CardFooter>
-                <Button color="primary"> Create Exercise</Button>
-              </CardFooter>
-            </Card>
+            <form onSubmit={this.handleSubmit}>
+              <Card>
+                <CardHeader color="primary">
+                  <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
+                  <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
+                </CardHeader>
+                <CardBody>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12} md={12}>
+                      <CustomInput
+                        value={this.state.exerciseName}
+                        onChange={this.handleChangeInput}
+                        labelText="Exercise Name"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={12}>
+                      <FormControl style={{width: "100%"}} className={classes.formControl}>
+                        <div className="materialSelect">
+                          <CustomSelect
+                            value={this.state.exerciseMeasurement}
+                            onChange={this.handleChangeSelect}
+                            labelText="Measurement"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                          >
+                            <option value=""></option>
+                            <option value="kg">kilograms</option>
+                            <option value="min">minutes</option>
+                            <option value="m">meters</option>
+                          </CustomSelect>
+                        </div>
+                      </FormControl>
+                    </GridItem>
+                  </GridContainer>
+                </CardBody>
+                <CardFooter>
+                  <Button color="primary" type="submit"> Create Exercise</Button>
+                </CardFooter>
+              </Card>
+            </form>
           </GridItem>
         </GridContainer>
       </div>
@@ -109,4 +127,13 @@ class NewExercise extends React.Component {
   }
 }
 
-export default withStyles(styles)(NewExercise);
+export default connect(
+  state => ({
+    newExercise: state.exercise
+  }),
+  dispatch => ({
+    onAddExercise: (exerciseName, exerciseMeasurement) => {
+      dispatch({ type: 'ADD_EXERCISE', payload: { exerciseName: exerciseName, exerciseMeasurement: exerciseMeasurement } })
+    }
+  })
+)(withStyles(styles)(NewExercise));

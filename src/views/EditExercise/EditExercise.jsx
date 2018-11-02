@@ -12,17 +12,14 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-import MenuItem from "@material-ui/core/MenuItem/MenuItem";
-import Select from "@material-ui/core/Select/Select";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
 import FormControl from "@material-ui/core/FormControl/FormControl";
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Cancel from '@material-ui/icons/Cancel';
 
 
-// import CustomSelect from '../../components/CustomSelect/CustomSelect';
-
+import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import "../../components/CustomSelect/Select.css";
 
 const styles = {
   cardCategoryWhite: {
@@ -45,22 +42,6 @@ const styles = {
     color: "#AAAAAA !important",
     fontSize: "14px"
   },
-  selectEmpty: {
-    '&:before': {
-      borderBottom: "1px solid #D2D2D2 !important;"
-    },
-    '&:after': {
-      borderColor: "#9c27b0!important;"
-    },
-    '&:hover': {
-      '&:before': {
-        borderBottom: "1px solid #D2D2D2!important;"
-      },
-      '&:after': {
-        borderColor: "#9c27b0!important;"
-      }
-    }
-  },
   button: {
     padding: "12px 37px;"
   },
@@ -80,52 +61,42 @@ const borderItem = {
 };
 
 
-
-
 class EditExercise extends React.Component {
-  state = {
-    selectValue: ''
-  };
-
-
-
-  handleChange = event => {
-    console.log(event.target);
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-
-
-
   render() {
     const { classes } = this.props;
-    const ListExerciseItems = this.props.editExerciseItems.test[0].exerciseItems.map((exerciseItem, index) =>
-
+    console.log(this.props.editExerciseItems)
+    const ListExerciseItems = this.props.editExerciseItems.exercise.map((exerciseItem, index) =>
       <GridContainer key={index}>
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
-            labelText={exerciseItem.name}
+            labelText="Exercise name"
             id="exercise-name"
             formControlProps={{
               fullWidth: true
             }}
+            inputProps={{
+              value: exerciseItem.exerciseName
+            }}
           />
         </GridItem>
         <GridItem xs={12} sm={12} md={3}>
-          <FormControl style={{width: "100%", marginTop: "27px"}} className={classes.formControl}>
-            <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">{exerciseItem.title}</InputLabel>
-            <Select
-              onChange={this.handleChange}
-              className={classes.selectEmpty}
-              value={this.state.selectValue}
-              inputProps={{
-                name: "selectValue"
-              }}
-            >
-              <MenuItem value='kilograms'>Kilograms</MenuItem>
-              <MenuItem value='meters'>Meters</MenuItem>
-              <MenuItem value='minutes'>Minutes</MenuItem>
-            </Select>
+          <FormControl style={{width: "100%"}} className={classes.formControl}>
+            <div className="materialSelect">
+              <CustomSelect
+                labelText="Measurement"
+                id="custom-select"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  value: exerciseItem.exerciseMeasurement
+                }}
+              >
+                <option value="kg">kilograms</option>
+                <option value="min">minutes</option>
+                <option value="m">meters</option>
+              </CustomSelect>
+            </div>
           </FormControl>
         </GridItem>
         <GridItem xs={12} sm={12} md={5}>

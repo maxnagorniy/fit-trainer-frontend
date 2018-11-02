@@ -1,0 +1,13 @@
+.materialSelect > div > div:before {
+    border-bottom: 1px solid #D2D2D2;
+}
+.materialSelect > div > div:after {
+    border-color: #9c27b0;
+}
+
+.materialSelect > div > div:hover:before {
+    border-bottom: 1px solid #D2D2D2!important;
+}
+.materialSelect > div > div:hover:after {
+    border-color: #9c27b0!important;
+}

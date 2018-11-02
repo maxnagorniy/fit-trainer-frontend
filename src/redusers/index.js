@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import test from './Test';
+import exercise from './exercises';
+import database from './default';
 
 export default combineReducers({
-  test
+  database,
+  exercise
 })

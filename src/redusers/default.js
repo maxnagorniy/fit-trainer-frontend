@@ -23,6 +23,6 @@ const database = [
   }
 ];
 
-export default function users(state = database) {
+export default function data(state = database) {
   return state
 }

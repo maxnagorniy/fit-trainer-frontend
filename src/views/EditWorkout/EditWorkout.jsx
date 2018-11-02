@@ -11,13 +11,12 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import FormControl from "@material-ui/core/FormControl/FormControl";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
-import Select from "@material-ui/core/Select/Select";
-import MenuItem from "@material-ui/core/MenuItem/MenuItem";
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Cancel from '@material-ui/icons/Cancel';
 
+import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import "../../components/CustomSelect/Select.css";
 
 const styles = {
   cardCategoryWhite: {
@@ -39,22 +38,6 @@ const styles = {
   colorDefault: {
     color: "#AAAAAA !important",
     fontSize: "14px"
-  },
-  selectEmpty: {
-    '&:before': {
-      borderBottom: "1px solid #D2D2D2 !important;"
-    },
-    '&:after': {
-      borderColor: "#9c27b0!important;"
-    },
-    '&:hover': {
-      '&:before': {
-        borderBottom: "1px solid #D2D2D2!important;"
-      },
-      '&:after': {
-        borderColor: "#9c27b0!important;"
-      }
-    }
   },
   button: {
     padding: "12px 40px;"
@@ -118,18 +101,20 @@ class EditWorkout extends React.Component {
       <GridContainer key={index}>
 
         <GridItem xs={12} sm={12} md={12} lg={2}>
-          <FormControl style={{width: "100%", marginTop: "27px"}} className={classes.formControl}>
-            <InputLabel className={classes.colorDefault} htmlFor="age-auto-width">{exerciseItem.name}</InputLabel>
-            <Select
-              value={this.state.valueSelect}
-              onChange={this.handleChange}
-              name="valueSelect"
-              className={classes.selectEmpty}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
+          <FormControl style={{width: "100%"}} className={classes.formControl}>
+            <div className="materialSelect">
+              <CustomSelect
+                labelText="Measurement"
+                id="custom-select"
+                formControlProps={{
+                  fullWidth: true
+                }}
+              >
+                <option value="Exercise#1">Exercise #1</option>
+                <option value="Exercise#2">Exercise #2</option>
+                <option value="Exercise#3">Exercise #3</option>
+              </CustomSelect>
+            </div>
           </FormControl>
         </GridItem>
 
