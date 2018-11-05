@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
-
-import exercise from './exercises';
-import database from './default';
+import exercises from './exerciseReducer';
 
 export default combineReducers({
-  database,
-  exercise
-})
+  exercises: exercises
+});

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import * as exerciseAction from '../../actions/exerciseAction';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -62,10 +63,15 @@ const borderItem = {
 
 
 class EditExercise extends React.Component {
+
+  deleteExercise(e, index){
+    e.preventDefault();
+    this.props.deleteExercise(index);
+  }
+
   render() {
     const { classes } = this.props;
-    console.log(this.props.editExerciseItems)
-    const ListExerciseItems = this.props.editExerciseItems.exercise.map((exerciseItem, index) =>
+    const ListExerciseItems = this.props.exercises.map((exercise, index) =>
       <GridContainer key={index}>
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
@@ -75,7 +81,7 @@ class EditExercise extends React.Component {
               fullWidth: true
             }}
             inputProps={{
-              value: exerciseItem.exerciseName
+              value: exercise.exerciseName
             }}
           />
         </GridItem>
@@ -89,7 +95,7 @@ class EditExercise extends React.Component {
                   fullWidth: true
                 }}
                 inputProps={{
-                  value: exerciseItem.exerciseMeasurement
+                  value: exercise.exerciseMeasurement
                 }}
                 onChange={this.handleChangeSelect}
               >
@@ -108,7 +114,13 @@ class EditExercise extends React.Component {
             <Button variant="fab" color="info" aria-label="ArrowDownward" className={classes.button}>
               <ArrowDownward />
             </Button>
-            <Button variant="fab" color="warning" aria-label="Cancel" className={classes.button}>
+            <Button
+              variant="fab"
+              color="warning"
+              aria-label="Cancel"
+              className={classes.button}
+              onClick={(e) => this.deleteExercise(e, index)}
+            >
               <Cancel/>
             </Button>
           </div>
@@ -138,9 +150,16 @@ class EditExercise extends React.Component {
   }
 }
 
-export default connect (
-  state => ({
-    editExerciseItems: state
-  }),
-  dispatch => ({})
-) (withStyles(styles)(EditExercise));
+const mapStateToProps = (state, ownProps) => {
+  return {
+    exercises: state.exercises
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteExercise: index => dispatch(exerciseAction.deleteExercise(index))
+  }
+};
+
+export default connect (mapStateToProps, mapDispatchToProps) (withStyles(styles)(EditExercise));

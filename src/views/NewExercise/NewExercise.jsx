@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import * as exerciseAction from '../../actions/exerciseAction';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -47,31 +48,38 @@ class NewExercise extends React.Component {
       exerciseMeasurement: ''
     }
   }
-  handleChangeInput = (event) => {
+  handleChangeInput = (e) => {
     this.setState({
-      exerciseName: event.target.value,
+      exerciseName: e.target.value,
     });
   };
 
-  handleChangeSelect = (event) => {
+  handleChangeSelect = (e) => {
     this.setState({
-      exerciseMeasurement: event.target.value,
+      exerciseMeasurement: e.target.value,
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onAddExercise(this.state.exerciseName, this.state.exerciseMeasurement);
+    let exercise = {
+      exerciseName: this.state.exerciseName,
+      exerciseMeasurement: this.state.exerciseMeasurement
+    };
+
     this.setState({
       exerciseName: '',
       exerciseMeasurement: ''
     });
+
     e.target.reset();
+
+    this.props.newExercise(exercise);
+
   };
 
   render() {
     const { classes } = this.props;
-    console.log('store', this.props.newExercise);
     return (
       <div>
         <GridContainer>
@@ -82,6 +90,9 @@ class NewExercise extends React.Component {
                   <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
                   <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
                 </CardHeader>
+                {/*{ <ul className="list-group">*/}
+                  {/*{this.props.exercise.map((exercise, i) => <div>{exercise.exerciseName}</div>)}*/}
+                {/*</ul> }*/}
                 <CardBody>
                   <GridContainer>
                     <GridItem xs={12} sm={12} md={12}>
@@ -131,16 +142,17 @@ class NewExercise extends React.Component {
   }
 }
 
-export default connect(
-  state => ({
-    newExercise: state.exercise
-  }),
-  dispatch => ({
-    onAddExercise: (exerciseName, exerciseMeasurement) => {
-      dispatch({ type: 'ADD_EXERCISE', payload: { id: Math.random()*10000000000000000, exerciseName: exerciseName, exerciseMeasurement: exerciseMeasurement } })
-    }
-    // deleteExercise: () => {
-    //   dispatch({ type: 'DELETE_EXERCISE',  })
-    // }
-  })
-)(withStyles(styles)(NewExercise));
+const mapStateToProps = (state, ownProps) => {
+  return {
+    exercises: state.exercises
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    newExercise: exercise => dispatch(exerciseAction.newExercise(exercise))
+    // deleteContact: index =>dispatch(contactAction.deleteContact(index))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(NewExercise));
