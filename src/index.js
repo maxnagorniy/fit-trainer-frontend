@@ -18,9 +18,6 @@ const hist = createBrowserHistory();
 
 const store = configureStore();
 
-// const store = createStore(reduser, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-
 
 ReactDOM.render(
   <Provider store={store}>
@@ -34,3 +31,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+
+// https://codesandbox.io/s/mmm4rr8799

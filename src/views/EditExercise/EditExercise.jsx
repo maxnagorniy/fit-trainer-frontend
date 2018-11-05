@@ -63,25 +63,51 @@ const borderItem = {
 
 
 class EditExercise extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      exerciseName: '',
+      exerciseMeasurement: ''
+    };
+  }
+  handleChangeInput = (e) => {
+    this.setState({
+      exerciseName: e.target.value,
+    });
+  };
+
+  handleChangeSelect = (e) => {
+    this.setState({
+      exerciseMeasurement: e.target.value,
+    });
+  };
 
   deleteExercise(e, index){
     e.preventDefault();
     this.props.deleteExercise(index);
   }
 
+  filterExerciseUp(e, index){
+    e.preventDefault();
+    this.props.filterExerciseUp(index, );
+  }
+
   render() {
+    console.log(this.state);
     const { classes } = this.props;
     const ListExerciseItems = this.props.exercises.map((exercise, index) =>
       <GridContainer key={index}>
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
+            ref={(input) => this.getMessageInput = input}
+            onChange={this.handleChangeInput}
             labelText="Exercise name"
             id="exercise-name"
             formControlProps={{
               fullWidth: true
             }}
             inputProps={{
-              value: exercise.exerciseName
+              defaultValue: exercise.exerciseName
             }}
           />
         </GridItem>
@@ -89,15 +115,15 @@ class EditExercise extends React.Component {
           <FormControl style={{width: "100%"}} className={classes.formControl}>
             <div className="materialSelect">
               <CustomSelect
+                onChange={this.handleChangeSelect}
                 labelText="Measurement"
                 id="custom-select"
                 formControlProps={{
                   fullWidth: true
                 }}
                 inputProps={{
-                  value: exercise.exerciseMeasurement
+                  defaultValue: exercise.exerciseMeasurement
                 }}
-                onChange={this.handleChangeSelect}
               >
                 <option value="kg">kilograms</option>
                 <option value="min">minutes</option>
@@ -108,7 +134,14 @@ class EditExercise extends React.Component {
         </GridItem>
         <GridItem xs={12} sm={12} md={5}>
           <div className={classes.buttonWrapper}>
-            <Button variant="fab" type="button" color="info" aria-label="ArrowUpward" className={classes.button}>
+            <Button
+              variant="fab"
+              type="button"
+              color="info"
+              aria-label="ArrowUpward"
+              className={classes.button}
+              onClick={(e) => this.filterExerciseUp(e, index)}
+            >
               <ArrowUpward />
             </Button>
             <Button variant="fab" color="info" aria-label="ArrowDownward" className={classes.button}>
@@ -133,15 +166,19 @@ class EditExercise extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={12} md={12}  >
             <Card>
-              <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Edit exercise</h4>
-              </CardHeader>
-              <CardBody>
-                {ListExerciseItems}
-              </CardBody>
-              <CardFooter>
-                <Button color="primary"> Update Exercise</Button>
-              </CardFooter>
+              <form onSubmit={(e) => this.handleSubmit(e)}>
+
+
+                <CardHeader color="primary">
+                  <h4 className={classes.cardTitleWhite}>Edit exercise</h4>
+                </CardHeader>
+                <CardBody>
+                  {ListExerciseItems}
+                </CardBody>
+                <CardFooter>
+                  <Button color="primary" type="submit"> Update Exercise</Button>
+                </CardFooter>
+              </form>
             </Card>
           </GridItem>
         </GridContainer>
@@ -158,7 +195,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteExercise: index => dispatch(exerciseAction.deleteExercise(index))
+    deleteExercise: index => dispatch(exerciseAction.deleteExercise(index)),
+    filterExerciseUp: index => dispatch(exerciseAction.filterExerciseUp(index))
   }
 };
 

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b157c213-481d-4127-8708-9b36dde7f983" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/exerciseAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redusers/exerciseReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/exerciseAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/exerciseAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redusers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redusers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redusers/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redusers/exerciseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redusers/exercises.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redusers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" afterDir="false" />
     </list>
@@ -66,7 +68,7 @@
           <entry key="html" value="2" />
           <entry key="jpeg" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="29" />
+          <entry key="js" value="33" />
           <entry key="json" value="4" />
           <entry key="jsx" value="107" />
           <entry key="md" value="3" />
@@ -81,7 +83,7 @@
           <entry key="Image" value="7" />
           <entry key="JSON" value="4" />
           <entry key="JSX Harmony" value="107" />
-          <entry key="JavaScript" value="29" />
+          <entry key="JavaScript" value="33" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="3" />
         </counts>
@@ -91,9 +93,9 @@
           <entry key="css" value="107" />
           <entry key="gitignore" value="17" />
           <entry key="html" value="14" />
-          <entry key="js" value="1565" />
+          <entry key="js" value="1899" />
           <entry key="json" value="32" />
-          <entry key="jsx" value="7979" />
+          <entry key="jsx" value="8833" />
           <entry key="md" value="13" />
         </counts>
       </usages-collector>
@@ -102,8 +104,8 @@
           <entry key="CSS" value="107" />
           <entry key="HTML" value="15" />
           <entry key="JSON" value="32" />
-          <entry key="JSX Harmony" value="7978" />
-          <entry key="JavaScript" value="1565" />
+          <entry key="JSX Harmony" value="8832" />
+          <entry key="JavaScript" value="1899" />
           <entry key="PLAIN_TEXT" value="30" />
         </counts>
       </usages-collector>
@@ -111,11 +113,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+            <state relative-caret-position="15">
+              <caret line="90" column="23" lean-forward="true" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#244#296#0" expanded="true" />
@@ -125,49 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="114" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="114" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/redusers/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/redusers/exerciseReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="152" column="42" lean-forward="true" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+            <state relative-caret-position="254">
+              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#179#231#0" expanded="true" />
@@ -179,8 +142,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/exerciseAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="255">
+              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/reducers/exerciseReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="24" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -202,6 +174,9 @@
       <find>Select</find>
       <find>Footer</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/components</dir>
     </dirStrings>
@@ -245,14 +220,15 @@
         <option value="$PROJECT_DIR$/src/redusers/default.js" />
         <option value="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" />
         <option value="$PROJECT_DIR$/src/redusers/exercises.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/store/configureStore.js" />
-        <option value="$PROJECT_DIR$/src/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/redusers/index.js" />
+        <option value="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/redusers/exerciseReducer.js" />
         <option value="$PROJECT_DIR$/src/actions/exerciseAction.js" />
-        <option value="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" />
         <option value="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" />
+        <option value="$PROJECT_DIR$/src/reducers/exerciseReducer.js" />
       </list>
     </option>
   </component>
@@ -307,7 +283,7 @@
               <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
               <item name="incode_front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redusers" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
@@ -381,12 +357,12 @@
       <workItem from="1540967482955" duration="22510000" />
       <workItem from="1541054275504" duration="17459000" />
       <workItem from="1541140739071" duration="29137000" />
-      <workItem from="1541399825315" duration="8656000" />
+      <workItem from="1541399825315" duration="26028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126053000" />
+    <option name="totallyTimeSpent" value="143425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,7 +377,7 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18777293" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18777293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -416,7 +392,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2656904" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22384937" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -601,6 +577,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
           <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#21#47#0" expanded="true" />
+            <element signature="e#177#226#0" expanded="true" />
+            <element signature="e#394#444#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -615,6 +597,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+          <folding>
+            <element signature="e#140#192#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -629,6 +614,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+          <folding>
+            <element signature="e#140#192#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,6 +643,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="110" column="65" lean-forward="true" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
+          <folding>
+            <element signature="e#140#192#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -669,6 +660,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-405">
           <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding>
+            <element signature="e#140#192#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -686,6 +680,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <element signature="e#173#213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/redusers/exercises.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -693,48 +707,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="114" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="114" />
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
+    <entry file="file://$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <caret line="90" column="23" lean-forward="true" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#244#296#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="49" lean-forward="true" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redusers/exerciseReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redusers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="45">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="152" column="42" lean-forward="true" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+        <state relative-caret-position="254">
+          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#179#231#0" expanded="true" />
@@ -744,19 +748,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/exerciseAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="255">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx">
+    <entry file="file://$PROJECT_DIR$/src/reducers/exerciseReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#244#296#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>

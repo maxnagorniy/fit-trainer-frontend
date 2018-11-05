@@ -13,3 +13,18 @@ export const deleteExercise = (id) => {
     id: id
   }
 };
+
+export const filterExerciseUp = (id) => {
+  return {
+    type: actionTypes.FILTER_EXERCISE_UP,
+    id: id
+  }
+};
+
+export const editExercise = (exercise, id) => {
+  return {
+    type: actionTypes.EDIT_EXERCISE,
+    id: id,
+    exercise: exercise
+  }
+};

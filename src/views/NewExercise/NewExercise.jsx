@@ -40,6 +40,8 @@ const styles = {
   }
 };
 
+let exerciseId = 0;
+
 class NewExercise extends React.Component {
   constructor(props) {
     super(props);
@@ -62,9 +64,11 @@ class NewExercise extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     let exercise = {
       exerciseName: this.state.exerciseName,
-      exerciseMeasurement: this.state.exerciseMeasurement
+      exerciseMeasurement: this.state.exerciseMeasurement,
+      id: exerciseId
     };
 
     this.setState({
@@ -76,6 +80,7 @@ class NewExercise extends React.Component {
 
     this.props.newExercise(exercise);
 
+    exerciseId += 1;
   };
 
   render() {
@@ -151,7 +156,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     newExercise: exercise => dispatch(exerciseAction.newExercise(exercise))
-    // deleteContact: index =>dispatch(contactAction.deleteContact(index))
   }
 };
 
