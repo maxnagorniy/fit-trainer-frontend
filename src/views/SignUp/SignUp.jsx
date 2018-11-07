@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -43,11 +45,15 @@ class SignUp extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      redirect: false,
       email: "",
+      errorEmail: false,
       password: "",
       errorPassword: false,
-      errorText: "",
-      errorEmail: false
+      errorPasswordText: "",
+      confirmPassword: "",
+      errorConfirmPassword: false,
+      errorConfirmPasswordText: ""
     }
   }
   handleChangePassword = (e) => {
@@ -59,54 +65,60 @@ class SignUp extends React.Component {
     this.setState({
       email: e.target.value
     })
+
   };
   handleChangeConfirmPassword = (e) => {
+    this.setState({
+      confirmPassword: e.target.value
+    });
     const pass = this.state.password;
     if(pass !== e.target.value){
       this.setState({
-        errorText: "Your passwords do not match",
-        errorPassword: true
+        errorConfirmPasswordText: "Your passwords do not match",
+        errorConfirmPassword: true
       });
 
+    } else if(e.target.value.length === 0) {
+      this.setState({
+        errorConfirmPasswordText: "Confirm your password",
+        errorConfirmPassword: true
+      });
     } else {
       this.setState({
-        errorText: "",
-        errorPassword: false
+        errorConfirmPasswordText: "",
+        errorConfirmPassword: false
       });
     }
   }
   ;
   handlerSubmit = (e) => {
     e.preventDefault();
-    if(!this.state.error){
-      console.log("true");
-      axios({
-        method: 'post',
-        url: 'http://localhost:4000/user/signup',
-        data: {
-          email: this.state.email,
-          password: this.state.password
-        },
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      })
-        .then(function (response) {
-          if(response){
-            console.log(response);
-          }
-        })
-        .catch(function (error) {
-          if(error){
-            console.log(error);
-          }
-        });
-    } else {
-      console.log("false");
-    }
 
+    axios({
+      method: 'post',
+      url: 'http://localhost:4000/user/signup',
+      data: {
+        email: this.state.email,
+        password: this.state.password
+      },
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    }).then((response) => {
+      this.setState({ redirect: true })
+      console.log(response);
+    })
+      .catch(function (error) {
+        if(error){
+          console.log(error);
+        }
+      });
   };
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/signin'/>;
+    }
     const { classes } = this.props;
     return (
       <div>
@@ -122,38 +134,49 @@ class SignUp extends React.Component {
                   <GridContainer direction="column">
                     <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
+                        value={this.state.email}
+                        error={this.state.errorEmail}
                         onChange={this.handleChangeEmail}
                         labelText="Email address"
                         formControlProps={{
                           fullWidth: true
                         }}
+                        inputProps={{
+                          type: "email",
+                          required: true
+                        }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
+                        value={this.state.password}
+                        error={this.state.errorPassword}
                         onChange={this.handleChangePassword}
                         labelText="Password"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "password"
+                          type: "password",
+                          required: true
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
-                        error={this.state.errorPassword}
+                        value={this.state.confirmPassword}
+                        error={this.state.errorConfirmPassword}
                         onChange={this.handleChangeConfirmPassword}
                         labelText="Repeat password"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "password"
+                          type: "password",
+                          required: true
                         }}
                       />
-                      <span className={classes.errorInput}>{this.state.errorText}</span>
+                      <span className={classes.errorInput}>{this.state.errorConfirmPasswordText}</span>
                     </GridItem>
 
                   </GridContainer>

@@ -47,7 +47,7 @@ const dashboardRoutes = [
     icon: Receipt,
     component: EditWorkout
   },
-  { redirect: true, path: "/", to: "/signin", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
 export default dashboardRoutes;

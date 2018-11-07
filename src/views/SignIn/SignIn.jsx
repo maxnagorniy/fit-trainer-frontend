@@ -11,6 +11,7 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import { Redirect } from "react-router-dom";
 
 const styles = {
   cardCategoryWhite: {
@@ -41,6 +42,7 @@ class SignIn extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      redirect: false,
       email: "",
       password: ""
     }
@@ -66,10 +68,9 @@ class SignIn extends React.Component {
         'Access-Control-Allow-Origin': '*'
       }
     })
-      .then(function (response) {
-        if(response){
-          console.log(response);
-        }
+      .then((response) => {
+        this.setState({ redirect: true });
+        console.log(response);
       })
       .catch(function (error) {
         if(error){
@@ -80,6 +81,10 @@ class SignIn extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/dashboard'/>;
+    }
     return (
       <div>
         <GridContainer>
