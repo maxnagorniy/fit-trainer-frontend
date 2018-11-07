@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b157c213-481d-4127-8708-9b36dde7f983" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/exerciseAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/exerciseAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,7 +85,7 @@
           <entry key="html" value="14" />
           <entry key="js" value="2355" />
           <entry key="json" value="32" />
-          <entry key="jsx" value="10326" />
+          <entry key="jsx" value="10552" />
           <entry key="md" value="13" />
         </counts>
       </usages-collector>
@@ -103,7 +94,7 @@
           <entry key="CSS" value="107" />
           <entry key="HTML" value="15" />
           <entry key="JSON" value="32" />
-          <entry key="JSX Harmony" value="10325" />
+          <entry key="JSX Harmony" value="10551" />
           <entry key="JavaScript" value="2355" />
           <entry key="PLAIN_TEXT" value="30" />
         </counts>
@@ -140,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/SignUp/SignUp.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+            <state relative-caret-position="465">
+              <caret line="145" column="55" selection-start-line="145" selection-start-column="55" selection-end-line="145" selection-end-column="55" />
               <folding>
                 <element signature="e#140#192#0" expanded="true" />
               </folding>
@@ -370,12 +361,12 @@
       <workItem from="1541140739071" duration="29137000" />
       <workItem from="1541399825315" duration="26732000" />
       <workItem from="1541486395267" duration="18888000" />
-      <workItem from="1541572636082" duration="6222000" />
+      <workItem from="1541572636082" duration="7593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169239000" />
+    <option name="totallyTimeSpent" value="170610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -727,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/SignUp/SignUp.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+        <state relative-caret-position="465">
+          <caret line="145" column="55" selection-start-line="145" selection-start-column="55" selection-end-line="145" selection-end-column="55" />
           <folding>
             <element signature="e#140#192#0" expanded="true" />
           </folding>

@@ -33,6 +33,9 @@ const styles = {
     color: "#9c27b0",
     fontSize: "1rem",
     fontWeight: "400"
+  },
+  errorInput: {
+    color: "#f44336"
   }
 };
 
@@ -42,8 +45,9 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
-      error: Boolean,
-      errorText: ""
+      errorPassword: false,
+      errorText: "",
+      errorEmail: false
     }
   }
   handleChangePassword = (e) => {
@@ -60,38 +64,47 @@ class SignUp extends React.Component {
     const pass = this.state.password;
     if(pass !== e.target.value){
       this.setState({
-        errorText: "Your passwords do not match"
+        errorText: "Your passwords do not match",
+        errorPassword: true
       });
+
     } else {
       this.setState({
-        errorText: ""
+        errorText: "",
+        errorPassword: false
       });
     }
   }
   ;
   handlerSubmit = (e) => {
     e.preventDefault();
-    axios({
-      method: 'post',
-      url: 'http://localhost:4000/user/signup',
-      data: {
-        email: this.state.email,
-        password: this.state.password
-      },
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
-      .then(function (response) {
-        if(response){
-          console.log(response);
+    if(!this.state.error){
+      console.log("true");
+      axios({
+        method: 'post',
+        url: 'http://localhost:4000/user/signup',
+        data: {
+          email: this.state.email,
+          password: this.state.password
+        },
+        headers: {
+          'Access-Control-Allow-Origin': '*'
         }
       })
-      .catch(function (error) {
-        if(error){
-          console.log(error);
-        }
-      });
+        .then(function (response) {
+          if(response){
+            console.log(response);
+          }
+        })
+        .catch(function (error) {
+          if(error){
+            console.log(error);
+          }
+        });
+    } else {
+      console.log("false");
+    }
+
   };
   render() {
     const { classes } = this.props;
@@ -130,6 +143,7 @@ class SignUp extends React.Component {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                       <CustomInput
+                        error={this.state.errorPassword}
                         onChange={this.handleChangeConfirmPassword}
                         labelText="Repeat password"
                         formControlProps={{
@@ -139,7 +153,7 @@ class SignUp extends React.Component {
                           type: "password"
                         }}
                       />
-                      {this.state.errorText}
+                      <span className={classes.errorInput}>{this.state.errorText}</span>
                     </GridItem>
 
                   </GridContainer>
