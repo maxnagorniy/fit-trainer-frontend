@@ -9,21 +9,26 @@ export default (state = [], action) => {
       ];
     case actionTypes.DELETE_EXERCISE:
       return state.filter((data, i) => i !== action.id);
-    // case actionTypes.FILTER_EXERCISE_UP:
-    //   return [state];
-    // case actionTypes.FILTER_EXERCISE_UP:
-    //   let position = -1;
-    //   let exercise = null;
-    //   state.filter((data, i) => {
-    //     if(data.id === action.id) {
-    //       position = i;
-    //       exercise = data;
-    //       return false;
-    //     } else {
-    //       return true;
-    //     }
-    //   });
-    //   return state.splice(position - 1, 0, exercise);
+    case actionTypes.FILTER_EXERCISE_UP:
+      const pivotUp = state.findIndex(data => data.id === action.id);
+
+      const filterUp = [...state].slice(0, Math.max(pivotUp - 1, 0));
+      const sliceUp = [...state].slice(pivotUp + 1);
+      return [
+        ...filterUp,
+        ...[state[pivotUp], state[pivotUp - 1]].filter(Boolean),
+        ...sliceUp
+      ];
+    case actionTypes.FILTER_EXERCISE_DOWN:
+      const pivotD = state.findIndex(data => data.id === action.id);
+
+      const filterD = [...state].slice(0, Math.max(pivotD + 1, 0));
+      const sliceD = [...state].slice(pivotD - 1);
+      return [
+        ...filterD,
+        ...[state[pivotD], state[pivotD + 1]].filter(Boolean),
+        ...sliceD
+      ];
     default:
       return state;
   }

@@ -3,16 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b157c213-481d-4127-8708-9b36dde7f983" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/exerciseAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/exerciseAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redusers/default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redusers/exerciseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redusers/exercises.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redusers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/exerciseReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,18 +45,18 @@
     <session id="1083016841">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="7" />
+          <entry key="ESLintLanguageService" value="9" />
           <entry key="TypeScriptServerServiceImpl" value="2" />
         </counts>
       </usages-collector>
@@ -68,9 +67,9 @@
           <entry key="html" value="2" />
           <entry key="jpeg" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="33" />
+          <entry key="js" value="34" />
           <entry key="json" value="4" />
-          <entry key="jsx" value="107" />
+          <entry key="jsx" value="110" />
           <entry key="md" value="3" />
           <entry key="png" value="4" />
           <entry key="ts" value="3" />
@@ -82,8 +81,8 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="7" />
           <entry key="JSON" value="4" />
-          <entry key="JSX Harmony" value="107" />
-          <entry key="JavaScript" value="33" />
+          <entry key="JSX Harmony" value="110" />
+          <entry key="JavaScript" value="34" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="3" />
         </counts>
@@ -93,9 +92,9 @@
           <entry key="css" value="107" />
           <entry key="gitignore" value="17" />
           <entry key="html" value="14" />
-          <entry key="js" value="1899" />
+          <entry key="js" value="2355" />
           <entry key="json" value="32" />
-          <entry key="jsx" value="8833" />
+          <entry key="jsx" value="10326" />
           <entry key="md" value="13" />
         </counts>
       </usages-collector>
@@ -104,8 +103,8 @@
           <entry key="CSS" value="107" />
           <entry key="HTML" value="15" />
           <entry key="JSON" value="32" />
-          <entry key="JSX Harmony" value="8832" />
-          <entry key="JavaScript" value="1899" />
+          <entry key="JSX Harmony" value="10325" />
+          <entry key="JavaScript" value="2355" />
           <entry key="PLAIN_TEXT" value="30" />
         </counts>
       </usages-collector>
@@ -116,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="90" column="23" lean-forward="true" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+            <state relative-caret-position="597">
+              <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#244#296#0" expanded="true" />
@@ -127,13 +126,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx">
+        <entry file="file://$PROJECT_DIR$/src/views/SignIn/SignIn.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+            <state relative-caret-position="462">
+              <caret line="78" column="4" lean-forward="true" selection-start-line="58" selection-start-column="2" selection-end-line="78" selection-end-column="4" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#179#231#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/SignUp/SignUp.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+              <folding>
+                <element signature="e#140#192#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="613">
+              <caret line="85" column="25" lean-forward="true" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="56" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,17 +173,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/exerciseAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="375">
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/actionTypes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/exerciseReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="435">
+              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -207,8 +247,6 @@
         <option value="$PROJECT_DIR$/src/App/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/layouts/Dashboard/Dashboard.jsx" />
-        <option value="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" />
-        <option value="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" />
         <option value="$PROJECT_DIR$/src/views/Verification/Verification.jsx" />
         <option value="$PROJECT_DIR$/src/components/PrivatRoute/PrivatRoute.js" />
         <option value="$PROJECT_DIR$/src/routes/dashboard.jsx" />
@@ -218,17 +256,19 @@
         <option value="$PROJECT_DIR$/src/views/EditWorkout/EditWorkout.jsx" />
         <option value="$PROJECT_DIR$/src/components/CustomSelect/CustomSelect.jsx" />
         <option value="$PROJECT_DIR$/src/redusers/default.js" />
-        <option value="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" />
         <option value="$PROJECT_DIR$/src/redusers/exercises.js" />
         <option value="$PROJECT_DIR$/src/store/configureStore.js" />
         <option value="$PROJECT_DIR$/src/redusers/index.js" />
         <option value="$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/redusers/exerciseReducer.js" />
-        <option value="$PROJECT_DIR$/src/actions/exerciseAction.js" />
         <option value="$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx" />
+        <option value="$PROJECT_DIR$/src/actions/exerciseAction.js" />
+        <option value="$PROJECT_DIR$/src/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/reducers/exerciseReducer.js" />
+        <option value="$PROJECT_DIR$/src/views/SignIn/SignIn.jsx" />
+        <option value="$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx" />
+        <option value="$PROJECT_DIR$/src/views/SignUp/SignUp.jsx" />
       </list>
     </option>
   </component>
@@ -268,35 +308,6 @@
               <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
               <item name="incode_front" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="incode_front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="incode_front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="incode_front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="incode_front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="incode_front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="incode_front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -305,7 +316,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReduxContactApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../incode_back" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -357,12 +368,14 @@
       <workItem from="1540967482955" duration="22510000" />
       <workItem from="1541054275504" duration="17459000" />
       <workItem from="1541140739071" duration="29137000" />
-      <workItem from="1541399825315" duration="26028000" />
+      <workItem from="1541399825315" duration="26732000" />
+      <workItem from="1541486395267" duration="18888000" />
+      <workItem from="1541572636082" duration="6222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143425000" />
+    <option name="totallyTimeSpent" value="169239000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,7 +390,7 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18777293" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18777293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -392,7 +405,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22384937" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.14748953" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -502,10 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#177#226#0" expanded="true" />
-            <element signature="e#394#458#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,12 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
           <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#21#47#0" expanded="true" />
-            <element signature="e#177#226#0" expanded="true" />
-            <element signature="e#394#444#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -593,30 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/SignUp/SignUp.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-          <folding>
-            <element signature="e#140#192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/SignIn/SignIn.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Verification/Verification.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <element signature="e#140#192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -643,9 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="110" column="65" lean-forward="true" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
-          <folding>
-            <element signature="e#140#192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,33 +640,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-405">
           <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <element signature="e#140#192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="79" column="26" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redusers/default.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redusers/default.js" />
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,33 +655,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding>
-            <element signature="e#173#213#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redusers/exercises.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redusers/exercises.js" />
     <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/exerciseAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/exerciseReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/EditExercise/EditExercise.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="90" column="23" lean-forward="true" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+        <state relative-caret-position="597">
+          <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#244#296#0" expanded="true" />
@@ -728,35 +698,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/NewExercise/NewExercise.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+        <state relative-caret-position="119">
+          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="56" selection-end-column="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#179#231#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/exerciseAction.js">
+    <entry file="file://$PROJECT_DIR$/src/views/SignIn/SignIn.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="462">
+          <caret line="78" column="4" lean-forward="true" selection-start-line="58" selection-start-column="2" selection-end-line="78" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/exerciseReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/components/CustomInput/CustomInput.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="613">
+          <caret line="85" column="25" lean-forward="true" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/SignUp/SignUp.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+          <folding>
+            <element signature="e#140#192#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

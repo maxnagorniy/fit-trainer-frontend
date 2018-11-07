@@ -61,6 +61,7 @@ function CustomInput({ ...props }) {
         }}
         id={id}
         onChange= {onChange}
+        error={error}
         {...inputProps}
       />
       {error ? (

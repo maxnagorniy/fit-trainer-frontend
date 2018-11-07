@@ -21,6 +21,13 @@ export const filterExerciseUp = (id) => {
   }
 };
 
+export const filterExerciseDown = (id) => {
+  return {
+    type: actionTypes.FILTER_EXERCISE_DOWN,
+    id: id
+  }
+};
+
 export const editExercise = (exercise, id) => {
   return {
     type: actionTypes.EDIT_EXERCISE,

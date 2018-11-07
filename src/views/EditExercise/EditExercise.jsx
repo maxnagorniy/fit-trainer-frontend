@@ -63,13 +63,6 @@ const borderItem = {
 
 
 class EditExercise extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      exerciseName: '',
-      exerciseMeasurement: ''
-    };
-  }
   handleChangeInput = (e) => {
     this.setState({
       exerciseName: e.target.value,
@@ -89,17 +82,23 @@ class EditExercise extends React.Component {
 
   filterExerciseUp(e, index){
     e.preventDefault();
-    this.props.filterExerciseUp(index, );
+    console.log(index);
+    this.props.filterExerciseUp(index);
+    console.log(this.props.exercises);
+  }
+  filterExerciseDown(e, index){
+    e.preventDefault();
+    console.log(index);
+    this.props.filterExerciseUp(index);
+    console.log(this.props.exercises);
   }
 
   render() {
-    console.log(this.state);
     const { classes } = this.props;
     const ListExerciseItems = this.props.exercises.map((exercise, index) =>
-      <GridContainer key={index}>
+      <GridContainer key={exercise.id}>
         <GridItem xs={12} sm={12} md={4}>
           <CustomInput
-            ref={(input) => this.getMessageInput = input}
             onChange={this.handleChangeInput}
             labelText="Exercise name"
             id="exercise-name"
@@ -140,11 +139,18 @@ class EditExercise extends React.Component {
               color="info"
               aria-label="ArrowUpward"
               className={classes.button}
+              id={exercise.id}
               onClick={(e) => this.filterExerciseUp(e, index)}
             >
               <ArrowUpward />
             </Button>
-            <Button variant="fab" color="info" aria-label="ArrowDownward" className={classes.button}>
+            <Button
+              variant="fab"
+              color="info"
+              aria-label="ArrowDownward"
+              className={classes.button}
+              onClick={(e) => this.filterExerciseDown(e, index)}
+            >
               <ArrowDownward />
             </Button>
             <Button
@@ -161,14 +167,13 @@ class EditExercise extends React.Component {
         <span style={borderItem}></span>
       </GridContainer>
     );
+
     return (
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={12}  >
             <Card>
               <form onSubmit={(e) => this.handleSubmit(e)}>
-
-
                 <CardHeader color="primary">
                   <h4 className={classes.cardTitleWhite}>Edit exercise</h4>
                 </CardHeader>
@@ -196,7 +201,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteExercise: index => dispatch(exerciseAction.deleteExercise(index)),
-    filterExerciseUp: index => dispatch(exerciseAction.filterExerciseUp(index))
+    filterExerciseUp: index => dispatch(exerciseAction.filterExerciseUp(index)),
+    filterExerciseDown: index => dispatch(exerciseAction.filterExerciseDown(index))
   }
 };
 
