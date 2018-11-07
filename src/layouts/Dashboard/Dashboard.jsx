@@ -13,6 +13,7 @@ import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
+import authRoutes from "routes/auth.jsx"
 
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
@@ -22,6 +23,17 @@ import logo from "assets/img/reactlogo.png";
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
+      if (prop.redirect)
+        return <Redirect from={prop.path} to={prop.to} key={key} />;
+      return <Route path={prop.path} component={prop.component} key={key} />;
+    })}
+  </Switch>
+);
+
+const authorRoutes = (
+
+  <Switch>
+    {authRoutes.map((prop, key) => {
       if (prop.redirect)
         return <Redirect from={prop.path} to={prop.to} key={key} />;
       return <Route path={prop.path} component={prop.component} key={key} />;
@@ -40,9 +52,6 @@ class App extends React.Component {
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
-  getRoute() {
-    return this.props.location.pathname !== "/maps";
-  }
   resizeFunction() {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
@@ -67,11 +76,14 @@ class App extends React.Component {
   }
   render() {
     const { classes, ...rest } = this.props;
+    // localStorage.setItem("token", "asdasdlkasdlkasdlksamdkl");
+    console.log(localStorage.token);
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={dashboardRoutes}
-          logoText={"Fit trainer"}
+          isAuth={localStorage.token !== ""}
+          routes={localStorage.token !== "" ? dashboardRoutes : authRoutes}
+          logoText={"Fit Trainer"}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
@@ -81,19 +93,18 @@ class App extends React.Component {
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            routes={dashboardRoutes}
+            isAuth={localStorage.token !== ""}
+            dashboardRoutes={dashboardRoutes}
+            authRoutes={authRoutes}
+            routes={localStorage.token !== "" ? dashboardRoutes : authRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />
-          {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
-          {this.getRoute() ? (
-            <div className={classes.content}>
-              <div className={classes.container}>{switchRoutes}</div>
-            </div>
-          ) : (
-            <div className={classes.map}>{switchRoutes}</div>
-          )}
-          {this.getRoute() ? <Footer /> : null}
+          { localStorage.token !== "" ?
+            (<div className={classes.map}>{switchRoutes}</div>)
+            :(<div className={classes.map}>{authorRoutes}</div>)}
+
+          <Footer isAuth={localStorage.token !== ""}/>
         </div>
       </div>
     );

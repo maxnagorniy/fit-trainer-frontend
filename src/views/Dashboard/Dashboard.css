@@ -1,0 +1,20 @@
+.Cal__Day__root.Cal__Day__disabled {
+    position: relative;
+}
+
+.Cal__Month__row.Cal__Month__partial:first-child li:first-child {
+    z-index: 1;
+}
+
+.Cal__Day__root.Cal__Day__disabled:after {
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #00ff00;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

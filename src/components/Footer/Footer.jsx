@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom'
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import ListItem from "@material-ui/core/ListItem";
@@ -7,38 +8,30 @@ import List from "@material-ui/core/List";
 // core components
 import footerStyle from "assets/jss/material-dashboard-react/components/footerStyle.jsx";
 
+import dashboardRoutes from "../../routes/dashboard";
+import authRoutes from "../../routes/auth";
+
 function Footer({ ...props }) {
   const { classes } = props;
   return (
-    <footer className={classes.footer}>
+    <footer style={{marginTop: "5vh"}}className={classes.footer}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a href="/dashboard" className={classes.block}>
-                Dashboard
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="/exercise" className={classes.block}>
-                New Exercise
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="/editexercise" className={classes.block}>
-                Edit Exercise
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="/workout" className={classes.block}>
-                New Workout
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="/editworkout" className={classes.block}>
-                Edit Workout
-              </a>
-            </ListItem>
+          <List className={classes.list} >
+            {localStorage.token !== "" ? dashboardRoutes.map((item, index)=>{
+              return <ListItem key={index} className={classes.inlineBlock}>
+                <Link to={item.path} className={classes.block}>
+                  {item.sidebarName}
+                </Link>
+              </ListItem>
+            }) : authRoutes.map((item, index)=>{
+              if (item.invisible) return null;
+              return <ListItem key={index} className={classes.inlineBlock}>
+                <Link to={item.path} className={classes.block}>
+                  {item.sidebarName}
+                </Link>
+              </ListItem>
+            })}
           </List>
         </div>
         <p className={classes.right}>

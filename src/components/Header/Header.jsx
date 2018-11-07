@@ -16,9 +16,17 @@ import Button from "components/CustomButtons/Button.jsx";
 import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.jsx";
 
 function Header({ ...props }) {
+
   function makeBrand() {
+    console.log(props);
     var name;
-    props.routes.map((prop, key) => {
+    console.log(localStorage.token);
+    localStorage.token !== "" ? props.dashboardRoutes.map((prop, key) => {
+      if (prop.path === props.location.pathname) {
+        name = prop.navbarName;
+      }
+      return null;
+    }) : props.authRoutes.map((prop, key) => {
       if (prop.path === props.location.pathname) {
         name = prop.navbarName;
       }
