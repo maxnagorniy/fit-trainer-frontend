@@ -13,9 +13,10 @@ import headerLinksStyle from "assets/jss/material-dashboard-react/components/hea
 class HeaderLinks extends React.Component {
   render() {
     const { classes } = this.props;
+    const user = JSON.parse(localStorage.getItem("user"));
     return (
       <div style={{display: "flex", alignItems: "center"}}>
-        <span style={{padding: "5px"}}>random@semail</span>
+        <span style={{padding: "5px"}}>{user ? user.name : ""}</span>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}

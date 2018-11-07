@@ -11,19 +11,21 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      a: false
+
     }
+  }
+  componentDidMount(){
+    localStorage.getItem("user") ? this.setState({user: false}): this.setState({user: true});
   }
   render() {
     return (
       <div>
           <Router history={hist}>
             <Switch>
-              {
-                this.state.a ?
-                  <Route path="/" component={Auth} />
-                  :
-                  <Route path="/" component={Dashboard} />
+              {this.state.user === true ?
+                <Route path="/" component={Auth}/>
+                :
+                <Route path="/" component={Dashboard}/>
               }
             </Switch>
           </Router>

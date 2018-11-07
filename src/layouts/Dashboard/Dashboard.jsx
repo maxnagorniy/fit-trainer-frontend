@@ -66,7 +66,6 @@ class App extends React.Component {
     window.removeEventListener("resize", this.resizeFunction);
   }
   render() {
-    console.log(this.props);
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>

@@ -34,6 +34,10 @@ const styles = {
     color: "#9c27b0",
     fontSize: "1rem",
     fontWeight: "400"
+  },
+  errorMessage: {
+    color: "#f44336",
+    fontWeight: 400
   }
 };
 
@@ -44,7 +48,8 @@ class SignIn extends React.Component {
     this.state = {
       redirect: false,
       email: "",
-      password: ""
+      password: "",
+      error: ""
     }
   }
   handleChangePassword = (e) => {
@@ -63,19 +68,29 @@ class SignIn extends React.Component {
     axios({
       method: 'post',
       url: 'http://localhost:4000/user/signin',
-      data: this.state,
+      data: {
+        email: this.state.email,
+        password: this.state.password
+      },
       headers: {
         'Access-Control-Allow-Origin': '*'
       }
-    })
-      .then((response) => {
+    }).then((response) => {
+        const user = {"name": this.state.email, "token": response.data.token};
+        localStorage.setItem("user", JSON.stringify(user));
+
         this.setState({ redirect: true });
-        console.log(response);
+
+        console.log(this.state.email);
+        console.log(localStorage.getItem("user"));
       })
-      .catch(function (error) {
+      .catch((error) => {
         if(error){
           console.log(error);
         }
+        this.setState({
+          error: "You entered user data incorrectly"
+        })
       });
   };
 
@@ -116,6 +131,7 @@ class SignIn extends React.Component {
                         }}
                         inputProps={{type: "password"}}
                       />
+                      <span className={classes.errorMessage}>{this.state.error}</span>
                     </GridItem>
                   </GridContainer>
                 </CardBody>
