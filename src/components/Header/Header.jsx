@@ -16,12 +16,9 @@ import Button from "components/CustomButtons/Button.jsx";
 import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.jsx";
 
 function Header({ ...props }) {
-
   function makeBrand() {
-    console.log(props);
     var name;
-    console.log(localStorage.token);
-    localStorage.token !== "" ? props.dashboardRoutes.map((prop, key) => {
+    localStorage.getItem("user") !== null  ? props.dashboardRoutes.map((prop, key) => {
       if (prop.path === props.location.pathname) {
         name = prop.navbarName;
       }
@@ -32,7 +29,8 @@ function Header({ ...props }) {
       }
       return null;
     });
-    return name;
+
+    return name
   }
   const { classes, color } = props;
   const appBarClasses = classNames({
@@ -48,7 +46,9 @@ function Header({ ...props }) {
           </Button>
         </div>
         <Hidden smDown implementation="css">
-          <HeaderLinks />
+          <HeaderLinks
+            visible={localStorage.getItem("user") !== null ? true : false}
+          />
         </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton

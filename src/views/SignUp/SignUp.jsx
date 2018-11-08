@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -45,7 +45,6 @@ class SignUp extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      redirect: false,
       email: "",
       errorEmail: false,
       password: "",
@@ -105,7 +104,7 @@ class SignUp extends React.Component {
         'Access-Control-Allow-Origin': '*'
       }
     }).then((response) => {
-      this.setState({ redirect: true })
+      // this.setState({ redirect: true })
       console.log(response);
     })
       .catch(function (error) {
@@ -115,10 +114,6 @@ class SignUp extends React.Component {
       });
   };
   render() {
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to='/signin'/>;
-    }
     const { classes } = this.props;
     return (
       <div>

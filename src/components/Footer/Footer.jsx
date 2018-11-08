@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import ListItem from "@material-ui/core/ListItem";
@@ -18,7 +18,7 @@ function Footer({ ...props }) {
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list} >
-            {localStorage.token !== "" ? dashboardRoutes.map((item, index)=>{
+            {localStorage.getItem("user") !== null ? dashboardRoutes.map((item, index)=>{
               return <ListItem key={index} className={classes.inlineBlock}>
                 <Link to={item.path} className={classes.block}>
                   {item.sidebarName}

@@ -20,6 +20,14 @@ import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboar
 import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
+const styles = {
+  wrappers: {
+    padding: "30px 15px",
+    marginTop: "70px",
+    minHeight: "calc(100vh - 123px)"
+  }
+};
+
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
@@ -30,8 +38,7 @@ const switchRoutes = (
   </Switch>
 );
 
-const authorRoutes = (
-
+const signinRoutes = (
   <Switch>
     {authRoutes.map((prop, key) => {
       if (prop.redirect)
@@ -76,13 +83,10 @@ class App extends React.Component {
   }
   render() {
     const { classes, ...rest } = this.props;
-    // localStorage.setItem("token", "asdasdlkasdlkasdlksamdkl");
-    console.log(localStorage.token);
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          isAuth={localStorage.token !== ""}
-          routes={localStorage.token !== "" ? dashboardRoutes : authRoutes}
+          routes={localStorage.getItem("user") !== null ? dashboardRoutes : authRoutes}
           logoText={"Fit Trainer"}
           logo={logo}
           image={image}
@@ -93,18 +97,23 @@ class App extends React.Component {
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            isAuth={localStorage.token !== ""}
+            isAuth={localStorage.getItem("user") !== null}
             dashboardRoutes={dashboardRoutes}
             authRoutes={authRoutes}
-            routes={localStorage.token !== "" ? dashboardRoutes : authRoutes}
+            routes={localStorage.getItem("user") !== null ? dashboardRoutes :  authRoutes }
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />
-          { localStorage.token !== "" ?
-            (<div className={classes.map}>{switchRoutes}</div>)
-            :(<div className={classes.map}>{authorRoutes}</div>)}
+          { localStorage.getItem("user") !== null ?
+            (<div className={classes.content}>
+                {switchRoutes}
+              </div>)
+            :(<div className={classes.content}>
+                {signinRoutes}
+              </div>)
+          }
 
-          <Footer isAuth={localStorage.token !== ""}/>
+          <Footer isAuth={localStorage.getItem("user") !== null}/>
         </div>
       </div>
     );

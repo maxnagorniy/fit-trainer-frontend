@@ -1,19 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "assets/css/material-dashboard-react.css?v=1.5.0";
-
 import Provider from "react-redux/es/components/Provider";
 import configureStore from "./store/configureStore";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
-
+import "assets/css/material-dashboard-react.css?v=1.5.0";
 import allRoutes from "./routes/index";
 
 const hist = createBrowserHistory();
 
 const store = configureStore();
-
 
 ReactDOM.render(
   <Provider store={store}>
