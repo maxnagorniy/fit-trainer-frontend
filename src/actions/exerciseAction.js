@@ -14,6 +14,14 @@ export const deleteExercise = (id) => {
   }
 };
 
+export const newDate = (selectDate) => {
+  return {
+    type: actionTypes.ADD_DATE_NEW_EXERCISE,
+    selectDate: selectDate
+  }
+};
+
+
 export const filterExerciseUp = (id) => {
   return {
     type: actionTypes.FILTER_EXERCISE_UP,

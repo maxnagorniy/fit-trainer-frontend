@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
+
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
 import InfiniteCalendar from 'react-infinite-calendar';
@@ -10,11 +13,8 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import "./Dashboard.css";
 
-
-
-// core components
-
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import * as exerciseAction from "../../actions/exerciseAction";
 
 const stylesButtonSet = {
   display: "flex",
@@ -25,18 +25,32 @@ const stylesButtonSet = {
 
 
 class Dashboard extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      selectDate: ""
+    };
+  }
+
+  handleAddDate = () => {
+    const selectDate = {
+      selectDate: this.state.selectDate
+    };
+    this.props.newDate(selectDate);
+    this.props.history.push("/exercise");
+  };
+
   render() {
-    const today = new Date();
-    const disableDate = [
-      new Date(2018, 10, 28)
-    ];
-    console.log(today);
+    const CustomDate = this.props.exercises;
+    const qwe = CustomDate.map(({ selectDate }) => selectDate);
+    const disableDate = [new Date(qwe)];
+
     return (
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={12} lg={10}>
             <div style={stylesButtonSet}>
-              <Button color="primary"> Add New Exercise</Button>
+              <Button color="primary" onClick={this.handleAddDate}> Add New Exercise</Button>
               <Button color="primary"> Add New Workout</Button>
             </div>
           </GridItem>
@@ -46,6 +60,13 @@ class Dashboard extends React.Component {
               height={500}
               disabledDates={disableDate}
               selected={"Wed Nov 08 2018 15:59:09 GMT+0200 (Eastern European Standard Time)"}
+              onSelect={date => {
+                  let yyyy = date.getFullYear();
+                  let mm = date.getMonth()+1;
+                  let dd  = date.getDate();
+                  this.setState({selectDate: String(yyyy +","+ mm +","+ dd)});
+                }
+              }
             />
           </GridItem>
         </GridContainer>
@@ -58,4 +79,16 @@ Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+const mapStateToProps = (state, ownProps) => {
+  return {
+    exercises: state.exercises
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    newDate: selectDate => dispatch(exerciseAction.newDate(selectDate))
+  }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(withStyles(dashboardStyle)(Dashboard)));

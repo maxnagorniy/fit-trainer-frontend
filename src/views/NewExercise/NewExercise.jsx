@@ -95,9 +95,6 @@ class NewExercise extends React.Component {
                   <h4 className={classes.cardTitleWhite}>Create new exercise</h4>
                   <p className={classes.cardCategoryWhite}>Please, add a new exercise name and measurement type</p>
                 </CardHeader>
-                {/*{ <ul className="list-group">*/}
-                  {/*{this.props.exercise.map((exercise, i) => <div>{exercise.exerciseName}</div>)}*/}
-                {/*</ul> }*/}
                 <CardBody>
                   <GridContainer>
                     <GridItem xs={12} sm={12} md={12}>

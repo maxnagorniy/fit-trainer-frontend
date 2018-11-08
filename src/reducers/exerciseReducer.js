@@ -9,6 +9,14 @@ export default (state = [], action) => {
       ];
     case actionTypes.DELETE_EXERCISE:
       return state.filter((data, i) => i !== action.id);
+
+    case actionTypes.ADD_DATE_NEW_EXERCISE:
+      console.log(action.selectDate);
+      return [
+        ...state,
+        Object.assign({}, action.selectDate)
+      ];
+
     case actionTypes.FILTER_EXERCISE_UP:
       const pivotUp = state.findIndex(data => data.id === action.id);
 
@@ -29,6 +37,9 @@ export default (state = [], action) => {
         ...[state[pivotD], state[pivotD + 1]].filter(Boolean),
         ...sliceD
       ];
+
+
+
     default:
       return state;
   }
