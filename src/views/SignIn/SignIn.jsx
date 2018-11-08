@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {withRouter} from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -11,7 +12,6 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-// import { Redirect } from "react-router-dom";
 
 const styles = {
   cardCategoryWhite: {
@@ -78,11 +78,7 @@ class SignIn extends React.Component {
     }).then((response) => {
         const user = {"name": this.state.email, "token": response.data.token};
         localStorage.setItem("user", JSON.stringify(user));
-
-        // this.setState({ redirect: true });
-
-        console.log(this.state.email);
-        console.log(localStorage.getItem("user"));
+        this.props.history.push("/dashboard");
       })
       .catch((error) => {
         if(error){
@@ -146,4 +142,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default withStyles(styles)(SignIn);
+export default withRouter(withStyles(styles)(SignIn));

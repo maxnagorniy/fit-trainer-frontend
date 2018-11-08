@@ -1,5 +1,5 @@
 import React from "react";
-// import { Redirect } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -104,8 +104,7 @@ class SignUp extends React.Component {
         'Access-Control-Allow-Origin': '*'
       }
     }).then((response) => {
-      // this.setState({ redirect: true })
-      console.log(response);
+      this.props.history.push("/signin");
     })
       .catch(function (error) {
         if(error){
@@ -191,4 +190,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default withStyles(styles)(SignUp);
+export default withRouter(withStyles(styles)(SignUp));
