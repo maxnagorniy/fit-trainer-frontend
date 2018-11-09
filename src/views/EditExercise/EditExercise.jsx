@@ -63,16 +63,19 @@ const borderItem = {
 
 
 class EditExercise extends React.Component {
-  handleChangeInput = (e) => {
-    this.setState({
-      exerciseName: e.target.value,
-    });
+  constructor(props){
+    super(props);
+    this.state = {}
+  }
+
+  handleChangeInput = (e, index) => {
+
   };
 
-  handleChangeSelect = (e) => {
-    this.setState({
-      exerciseMeasurement: e.target.value,
-    });
+  handleChangeSelect = (e,index) => {
+    // this.setState({
+    //   exerciseMeasurement: e.target.value,
+    // });
   };
 
   deleteExercise(e, index){
@@ -82,15 +85,24 @@ class EditExercise extends React.Component {
 
   filterExerciseUp(e, index){
     e.preventDefault();
-    console.log(index);
     this.props.filterExerciseUp(index);
-    console.log(this.props.exercises);
   }
+
   filterExerciseDown(e, index){
     e.preventDefault();
-    console.log(index);
     this.props.filterExerciseUp(index);
-    console.log(this.props.exercises);
+  }
+
+  componentDidMount(){
+    const exercises = this.props.exercises;
+    this.setState({exercises});
+  }
+
+  handleSubmit(e, index){
+    e.preventDefault();
+
+    this.props.editExercise(index);
+    console.log(this.state);
   }
 
   render() {
@@ -202,7 +214,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     deleteExercise: index => dispatch(exerciseAction.deleteExercise(index)),
     filterExerciseUp: index => dispatch(exerciseAction.filterExerciseUp(index)),
-    filterExerciseDown: index => dispatch(exerciseAction.filterExerciseDown(index))
+    filterExerciseDown: index => dispatch(exerciseAction.filterExerciseDown(index)),
+    editExercise: index => dispatch(exerciseAction.editExercise(index))
   }
 };
 

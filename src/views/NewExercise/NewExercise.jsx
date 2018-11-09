@@ -40,8 +40,6 @@ const styles = {
   }
 };
 
-let exerciseId = 0;
-
 class NewExercise extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +66,7 @@ class NewExercise extends React.Component {
     let exercise = {
       exerciseName: this.state.exerciseName,
       exerciseMeasurement: this.state.exerciseMeasurement,
-      id: exerciseId
+      id: Math.random().toString(36).substring(7)
     };
 
     this.setState({
@@ -79,8 +77,6 @@ class NewExercise extends React.Component {
     e.target.reset();
 
     this.props.newExercise(exercise);
-
-    exerciseId += 1;
   };
 
   render() {

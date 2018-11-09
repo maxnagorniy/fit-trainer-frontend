@@ -38,7 +38,12 @@ export default (state = [], action) => {
         ...sliceD
       ];
 
-
+    case actionTypes.EDIT_EXERCISE:
+      console.log(action.exercise);
+      return [
+        ...state,
+        Object.assign({}, action.exercise)
+      ];
 
     default:
       return state;

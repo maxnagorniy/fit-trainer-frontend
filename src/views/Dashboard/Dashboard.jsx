@@ -59,7 +59,6 @@ class Dashboard extends React.Component {
               width={(window.innerWidth <= 450) ? window.innerWidth : 450}
               height={500}
               disabledDates={disableDate}
-              selected={"Wed Nov 08 2018 15:59:09 GMT+0200 (Eastern European Standard Time)"}
               onSelect={date => {
                   let yyyy = date.getFullYear();
                   let mm = date.getMonth()+1;
